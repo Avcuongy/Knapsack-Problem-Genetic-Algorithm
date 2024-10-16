@@ -23,5 +23,6 @@ May be updated, hope so. 😁
 
 # Note:
 ```
-Continue ...
+- Giải quyết về vấn đề tối ưu bài toán thực tế.
+- Giải pháp cho ra ở các lần chạy là không giống nhau => vấn đề về tối ưu.
 ```

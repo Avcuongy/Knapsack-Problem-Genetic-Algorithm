@@ -2,11 +2,13 @@ import matplotlib.pyplot as plt
 import random
 
 # Dữ liệu cho bài toán Knapsack (Danh sách các vật phẩm với trọng lượng và giá trị)
-items = [(1, 2), (2, 8), (4, 12), (5, 10)]  # (weight, value)
-max_capacity = 10  # Sức chứa tối đa của balo
+items = [(4, 2), (2, 4), (20, 5), (5, 6), (23, 8), (9, 9), (14, 11), (16, 12), (19, 10), 
+         (14, 20), (14, 23), (16, 8), (18, 4), (14, 1), (10, 7), (29, 4), (2, 4), (4, 2), 
+         (1, 8), (13, 26)] # (weight, value)
+max_capacity = 40  # Sức chứa tối đa của balo
 
 # Các tham số của thuật toán di truyền
-population_size = 20
+population_size = 200
 generations = 200
 crossover_rate = 0.8
 mutation_rate = 0.02

@@ -1,12 +1,31 @@
-import matplotlib.pyplot as plt
 import random
 
 # Dữ liệu cho bài toán Knapsack (Danh sách các vật phẩm với trọng lượng và giá trị)
-items = [(4, 2), (2, 4), (20, 5), (5, 6), (23, 8), (9, 9), (14, 11), (16, 12), (19, 10), 
-         (14, 20), (14, 23), (16, 8), (18, 4), (14, 1), (10, 7), (29, 4), (2, 4), (4, 2), 
-         (1, 8), (13, 26)] # (weight, value)
-max_capacity = 40  # Sức chứa tối đa của balo
+def parse_items(weights_str, values_str):
+    weights = list(map(int, weights_str.split(',')))
+    values = list(map(int, values_str.split(',')))
+    items = list(zip(weights, values))
+    return items
 
+# Input Problem
+def get_user_input():
+    weights_str = input("Nhập danh sách trọng lượng (phân tách bằng dấu phẩy): ")
+    values_str = input("Nhập danh sách giá trị (phân tách bằng dấu phẩy): ")
+    max_capacity = int(input("Maximum capacity: "))
+    return parse_items(weights_str, values_str), max_capacity
+   
+# Lấy dữ liệu đầu vào và chuyển thành danh sách items và sức chứa
+items, max_capacity = None, None
+  
+# Info Problem
+def get_info(items,max_capacity):
+    stt = 1;
+    for weight, value in items:
+        print(f"Vật phẩm {stt}: Weight = {weight}, Value = {value}")
+        stt+=1
+    print(f"\nMaximum capacity = {max_capacity}")
+    
+  
 # Các tham số của thuật toán di truyền
 population_size = 200
 generations = 200
@@ -27,7 +46,7 @@ def fitness(individual):
             total_weight += items[i][0]
             total_value += items[i][1]
     if total_weight > max_capacity:
-        return 0  # Nếu vượt quá sức chứa, điểm thích nghi = 0
+        return 0 
     else:
         return total_value
 
@@ -40,12 +59,12 @@ def selection(population):
     selected = []
     
     # Chọn lọc ưu tú (Elitism): Giữ lại cá thể tốt nhất
-    selected.append(population[0])  # Giữ lại cá thể có fitness tốt nhất
+    selected.append(population[0])
     
     # Chọn lọc đấu giá (Tournament)
-    for _ in range(population_size - 1): # Chọn các cá thể còn lại
-        tournament = random.sample(population, k)  # Chọn ngẫu nhiên k cá thể để đấu giá
-        winner = max(tournament, key=fitness)  # Cá thể có fitness cao nhất sẽ thắng
+    for _ in range(population_size - 1):
+        tournament = random.sample(population, k)
+        winner = max(tournament, key=fitness)
         selected.append(winner)
     return selected
 
@@ -63,7 +82,7 @@ def crossover(parent1, parent2):
 def mutate(individual):
     for i in range(len(individual)):
         if random.random() < mutation_rate:
-            individual[i] = 1 - individual[i]  # Thay đổi bit 0 thành 1 và ngược lại
+            individual[i] = 1 - individual[i]
     return individual
 
 # Hàm chính cho thuật toán di truyền
@@ -78,7 +97,6 @@ def genetic_algorithm():
         best_solution = population[0]
         best_fitness = fitness(best_solution)
 
-        # Chọn lọc các cá thể cha mẹ (Elitism và Tournament Selection trong hàm selection)
         parents = selection(population)
 
         # Tạo ra quần thể mới, bắt đầu với cá thể tốt nhất
@@ -102,22 +120,10 @@ def genetic_algorithm():
         # Ghi lại lời giải tốt nhất mỗi thế hệ
         fitness_history.append(best_fitness)
 
-        #print(f"Generation {generation}: Best Fitness = {best_fitness}, Best Solution = {best_solution}")
-
     # Kết quả tốt nhất sau các thế hệ
     best_solution = max(population, key=fitness)
     print("\nBest solution:", best_solution)
     print("Best fitness:", fitness(best_solution))
 
-# Chạy thuật toán di truyền
-genetic_algorithm()
 
-# Vẽ biểu đồ fitness qua các thế hệ
-plt.figure(figsize=(8, 5))
-plt.plot(fitness_history)
-plt.title('Fitness over generations')
-plt.xlabel('Generations')
-plt.ylabel('Best Fitness')
-plt.grid()
-plt.show()
 

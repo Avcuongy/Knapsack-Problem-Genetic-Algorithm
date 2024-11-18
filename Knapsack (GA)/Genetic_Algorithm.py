@@ -78,7 +78,12 @@ def genetic_algorithm():
 
         offspring = [mutate(ind) for ind in offspring]
         
-        population = offspring
+        population.extend(offspring)
+        
+        # Cắt tỉa quần thể để đảm bảo kích thước không vượt quá POPULATION_SIZE
+        population = sorted(population, key=lambda ind: fitness(ind), reverse=True)
+        population = population[:POPULATION_SIZE]
+        
         current_best = max(population, key=lambda ind: fitness(ind))
         fitness_history.append(fitness(current_best))
         

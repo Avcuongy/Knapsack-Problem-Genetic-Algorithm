@@ -42,17 +42,11 @@ def select_population(population):
     sorted_population = sorted(population, key=lambda x: fitness(x), reverse=True)
     return sorted_population[:POPULATION_SIZE]
 
-# Lai ghép Uniform Crossover
+# Lai ghép One-point
 def crossover(parent1, parent2):
-    child1, child2 = parent1[:], parent2[:]
-    for i in range(len(parent1)):
-        coin_flip = random.choice([0, 1])
-        if coin_flip == 0:
-            child1[i] = parent1[i]
-            child2[i] = parent2[i]
-        else:
-            child1[i] = parent2[i]
-            child2[i] = parent1[i]
+    crossover_point = random.randint(1, len(parent1) - 1)
+    child1 = parent1[:crossover_point] + parent2[crossover_point:]
+    child2 = parent2[:crossover_point] + parent1[crossover_point:]
     return child1, child2
 
 # Đột biến Bit-flip

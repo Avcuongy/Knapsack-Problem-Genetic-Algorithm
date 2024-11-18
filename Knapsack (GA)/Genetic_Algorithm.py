@@ -9,26 +9,6 @@ items = [] # Vật phẩm chứa weights và values
 max_capacity = 0 # maximum capacity
 fitness_history = [] # Danh sách lưu trữ giá trị fitness của các cá thể tốt nhất qua từng thế hệ.
 
-def parse_items(weights_str, values_str):
-    weights = list(map(int, weights_str.split(",")))
-    values = list(map(int, values_str.split(",")))
-    items = list(zip(weights, values))
-    return items
-
-def get_user_input():
-    weights_str = input("Nhập danh sách trọng lượng (phân tách bằng dấu phẩy): ")
-    values_str = input("Nhập danh sách giá trị (phân tách bằng dấu phẩy): ")
-    max_capacity = int(input("Maximum capacity: "))
-    return parse_items(weights_str, values_str), max_capacity
-
-def get_info():
-    print("\nThông tin bài toán:\n")
-    stt = 1
-    for weight, value in items:
-        print(f"Vật phẩm {stt}: Weight = {weight}, Value = {value}")
-        stt += 1
-    print(f"\nMaximum capacity = {max_capacity}")
-
 def fitness(individual):
     total_weight = sum(individual[i] * items[i][0] for i in range(len(items)))
     total_value = sum(individual[i] * items[i][1] for i in range(len(items)))
@@ -44,6 +24,8 @@ def select_population(population):
 
 # Lai ghép One-point
 def crossover(parent1, parent2):
+    if len(parent1) <= 1:  # Kiểm tra độ dài
+        return parent1.copy(), parent2.copy()
     crossover_point = random.randint(1, len(parent1) - 1)
     child1 = parent1[:crossover_point] + parent2[crossover_point:]
     child2 = parent2[:crossover_point] + parent1[crossover_point:]

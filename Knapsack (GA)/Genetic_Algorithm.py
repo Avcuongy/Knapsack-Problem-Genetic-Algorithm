@@ -9,17 +9,18 @@ items = [] # Vật phẩm chứa weights và values
 max_capacity = 0 # maximum capacity
 fitness_history = [] # Danh sách lưu trữ giá trị fitness của các cá thể tốt nhất qua từng thế hệ.
 
-def parse_items(weights_str, values_str):
+def get_user_input():
+    global items, max_capacity
+    
+    weights_str = input("Nhập danh sách trọng lượng (phân tách bằng dấu phẩy): ")
+    values_str = input("Nhập danh sách giá trị (phân tách bằng dấu phẩy): ")
+    max_capacity = int(input("Nhập sức chứa tối đa: "))
+    
     weights = list(map(int, weights_str.split(",")))
     values = list(map(int, values_str.split(",")))
     items = list(zip(weights, values))
-    return items
-
-def get_user_input():
-    weights_str = input("Nhập danh sách trọng lượng (phân tách bằng dấu phẩy): ")
-    values_str = input("Nhập danh sách giá trị (phân tách bằng dấu phẩy): ")
-    max_capacity = int(input("Maximum capacity: "))
-    return parse_items(weights_str, values_str), max_capacity
+    
+    return items, max_capacity
 
 def get_info():
     print("\nThông tin bài toán:\n")
@@ -44,6 +45,8 @@ def select_population(population):
 
 # Lai ghép One-point
 def crossover(parent1, parent2):
+    if len(parent1) <= 1 or len(parent2) <= 1:
+        return parent1, parent2
     crossover_point = random.randint(1, len(parent1) - 1)
     child1 = parent1[:crossover_point] + parent2[crossover_point:]
     child2 = parent2[:crossover_point] + parent1[crossover_point:]
@@ -57,6 +60,8 @@ def mutate(individual):
     return individual
 
 def genetic_algorithm():
+    global fitness_history
+    
     population = initialize_population(len(items))
     best_individual = max(population, key=lambda ind: fitness(ind))
 

@@ -9,6 +9,29 @@ items = [] # Vật phẩm chứa weights và values
 max_capacity = 0 # maximum capacity
 fitness_history = [] # Danh sách lưu trữ giá trị fitness của các cá thể tốt nhất qua từng thế hệ.
 
+# Thông tin người dùng nhập vào
+def get_user_input():
+    global items, max_capacity
+    
+    weights_str = input("Nhập danh sách trọng lượng (phân tách bằng dấu phẩy): ")
+    values_str = input("Nhập danh sách giá trị (phân tách bằng dấu phẩy): ")
+    max_capacity = int(input("Nhập sức chứa tối đa: "))
+    
+    weights = list(map(int, weights_str.split(",")))
+    values = list(map(int, values_str.split(",")))
+    items = list(zip(weights, values))
+    
+    return items, max_capacity
+
+# Hiển thị thông tin bài toán
+def get_info():
+    print("\nThông tin bài toán:\n")
+    stt = 1
+    for weight, value in items:
+        print(f"Vật phẩm {stt}: Weight = {weight}, Value = {value}")
+        stt += 1
+    print(f"\nMaximum capacity = {max_capacity}")
+
 # Khởi tạo quần thể
 def initialize_population(num_items):
     return [[random.randint(0, 1) for _ in range(num_items)] for _ in range(POPULATION_SIZE)]

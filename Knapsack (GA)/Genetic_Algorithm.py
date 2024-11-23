@@ -9,34 +9,15 @@ items = [] # Vật phẩm chứa weights và values
 max_capacity = 0 # maximum capacity
 fitness_history = [] # Danh sách lưu trữ giá trị fitness của các cá thể tốt nhất qua từng thế hệ.
 
-def get_user_input():
-    global items, max_capacity
-    
-    weights_str = input("Nhập danh sách trọng lượng (phân tách bằng dấu phẩy): ")
-    values_str = input("Nhập danh sách giá trị (phân tách bằng dấu phẩy): ")
-    max_capacity = int(input("Nhập sức chứa tối đa: "))
-    
-    weights = list(map(int, weights_str.split(",")))
-    values = list(map(int, values_str.split(",")))
-    items = list(zip(weights, values))
-    
-    return items, max_capacity
+# Khởi tạo quần thể
+def initialize_population(num_items):
+    return [[random.randint(0, 1) for _ in range(num_items)] for _ in range(POPULATION_SIZE)]
 
-def get_info():
-    print("\nThông tin bài toán:\n")
-    stt = 1
-    for weight, value in items:
-        print(f"Vật phẩm {stt}: Weight = {weight}, Value = {value}")
-        stt += 1
-    print(f"\nMaximum capacity = {max_capacity}")
-
+# Tính fitness của cá thể
 def fitness(individual):
     total_weight = sum(individual[i] * items[i][0] for i in range(len(items)))
     total_value = sum(individual[i] * items[i][1] for i in range(len(items)))
     return total_value if total_weight <= max_capacity else 0
-
-def initialize_population(num_items):
-    return [[random.randint(0, 1) for _ in range(num_items)] for _ in range(POPULATION_SIZE)]
 
 # Chọn lọc elitism
 def select_population(population):

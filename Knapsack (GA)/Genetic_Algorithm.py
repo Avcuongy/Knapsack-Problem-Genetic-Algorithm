@@ -30,6 +30,11 @@ def get_info():
         stt += 1
     print(f"\nMaximum capacity = {max_capacity}")
 
+def set_problem_input(input_items, input_max_capacity):
+    global items, max_capacity
+    items = input_items
+    max_capacity = input_max_capacity
+
 def fitness(individual):
     total_weight = sum(individual[i] * items[i][0] for i in range(len(items)))
     total_value = sum(individual[i] * items[i][1] for i in range(len(items)))

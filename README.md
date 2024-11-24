@@ -1,8 +1,7 @@
 <div align="center">
   
 # KNAPSACK 0/1
-
-</div>
+<img src="https://github.com/Avcuongy/Avcuongy/blob/main/Pictures/Knapsack.svg.png" width="350" height="300">
 
 </div>
 

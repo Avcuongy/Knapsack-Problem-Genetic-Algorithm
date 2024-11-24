@@ -26,33 +26,32 @@ Các bước chính trong thuật toán di truyền bao gồm:
 1. **Khởi tạo quần thể**:  
    Quần thể ban đầu gồm các cá thể được tạo ngẫu nhiên, mỗi cá thể đại diện cho một tập hợp các vật phẩm.
    
-   Hàm initialize_population được thiết kế để thực hiện quá trình này.
+   ``` initialize_population ``` được thiết kế để thực hiện quá trình này.
    
 2. **Tính toán**:
    Fitness của mỗi cá thể được tính dựa trên số vật phẩm được chọn và tính tổng value của số vật phẩm được chọn.
    
-   Hàm fitness được thiết kế để thực hiện quá trình này.
+   ``` fitness ```được thiết kế để thực hiện quá trình này.
      
 3. **Chọn lọc (Selection)**:  
    Các cá thể có fitness tốt được chọn để sinh sản, dựa trên giá trị tổng hợp (sự phù hợp) của chúng đối với bài toán knapsack.
    
-   Hàm select_population được thiết kế để thực hiện quá trình này.
+   ``` select_population ``` được thiết kế để thực hiện quá trình này.
    
 4. **Lai ghép (Crossover)**:  
    Các cá thể được lai ghép để tạo ra các cá thể con, mô phỏng sự kết hợp gene từ hai cá thể cha mẹ.
    
-   Hàm crossover được thiết kế để thực hiện quá trình này.
+   ``` crossover ``` được thiết kế để thực hiện quá trình này.
    
 5. **Đột biến (Mutation)**:  
    Một tỷ lệ nhất định các cá thể trong quần thể sẽ được đột biến, tức là thay đổi một phần tử trong gene của chúng để tăng tính đa dạng trong quần thể.
    
-   Hàm mutate được thiết kế để thực hiện quá trình này.
+   ``` mutate ``` được thiết kế để thực hiện quá trình này.
    
 6. **Triễn khai thuật toán**:  
-   Tối ưu hóa tổng giá trị của các vật phẩm và cập nhật quần thể qua từng thế hệ được chọn trong ba lô mà không vượt quá giới hạn trọng lượng cho phép .
-   Và Cuối cùng trả về kết quả tốt nhất.
+   Tối ưu hóa tổng giá trị của các vật phẩm và cập nhật quần thể qua từng thế hệ được chọn trong ba lô mà không vượt quá giới hạn trọng lượng cho phép và cuối cùng sẽ trả về kết quả tốt nhất.
 
-   Hàm genetic_algorithm triển khai thuật toán di truyền, thực hiện các bước cơ bản của quá trình tiến hóa để tìm kiếm giải pháp tối ưu.
+   ``` genetic_algorithm ``` triển khai thuật toán di truyền, thực hiện các bước cơ bản của quá trình tiến hóa để tìm kiếm giải pháp tối ưu.
    
 **Kết quả**:
 

@@ -1,4 +1,4 @@
-<div align="center">
+ <div align="center">
   
 # KNAPSACK 0/1
 <img src="https://github.com/Avcuongy/Avcuongy/blob/main/Pictures/Knapsack.svg.png" width="350" height="300">

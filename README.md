@@ -62,5 +62,3 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 
 ## Cài đặt
 Clone repository về máy của bạn:
-   ```bash
-   git clone https://github.com/ThojTran/Knapsack-Problem-Genetic-Algorithm.git

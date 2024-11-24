@@ -19,7 +19,6 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 ### Tham số bài toán 
 - Danh sách chứa thông tin về các vật phẩm trong bài toán cái ba lô, bao gồm trọng lượng và giá trị của mỗi vật phẩm.
 - Dung lượng tối đa của cái ba lô trong bài toán.
-- Danh sách lưu trữ giá trị fitness của các cá thể tốt nhất qua từng thế hệ.
 
 ## Các bước chính trong thuật toán di truyền bao gồm
 

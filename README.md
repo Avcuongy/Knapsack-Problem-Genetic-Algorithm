@@ -16,19 +16,20 @@ Bài toán **Knapsack** là một bài toán tối ưu hóa cổ điển trong �
 
 Thuật toán di truyền (GA) được sử dụng để giải quyết bài toán này bằng cách mô phỏng quá trình tiến hóa của tự nhiên.
 
-# Tham số bài toán 
+### Tham số bài toán 
 - Danh sách chứa thông tin về các vật phẩm trong bài toán cái ba lô, bao gồm trọng lượng và giá trị của mỗi vật phẩm.
 - Dung lượng tối đa của cái ba lô trong bài toán.
 - Danh sách lưu trữ giá trị fitness của các cá thể tốt nhất qua từng thế hệ.
 
-Các bước chính trong thuật toán di truyền bao gồm:
+## Các bước chính trong thuật toán di truyền bao gồm:
+
 
 1. **Khởi tạo quần thể**:  
    Quần thể ban đầu gồm các cá thể được tạo ngẫu nhiên, mỗi cá thể đại diện cho một tập hợp các vật phẩm.
    
    ``` initialize_population ``` được thiết kế để thực hiện quá trình này.
    
-2. **Tính toán**:
+2. **Đánh giá quần thể**:
    Fitness của mỗi cá thể được tính dựa trên số vật phẩm được chọn và tính tổng value của số vật phẩm được chọn.
    
    ``` fitness ```được thiết kế để thực hiện quá trình này.
@@ -56,7 +57,6 @@ Các bước chính trong thuật toán di truyền bao gồm:
 **Kết quả**:
 
    Quá trình tiến hóa tiếp tục cho đến khi đạt được số thế hệ tối đa, và cá thể có fitness cao nhất được chọn làm giải pháp tối ưu cho bài toán.
-
 
 ## Cài đặt
 Clone repository về máy của bạn:

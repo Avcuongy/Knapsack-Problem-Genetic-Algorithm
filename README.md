@@ -23,6 +23,7 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 
 ## Các bước chính trong thuật toán di truyền bao gồm:
 
+--- 
 
 1. **Khởi tạo quần thể**:  
    Quần thể ban đầu gồm các cá thể được tạo ngẫu nhiên, mỗi cá thể đại diện cho một tập hợp các vật phẩm.
@@ -53,7 +54,8 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
    Tối ưu hóa tổng giá trị của các vật phẩm và cập nhật quần thể qua từng thế hệ được chọn trong ba lô mà không vượt quá giới hạn trọng lượng cho phép và cuối cùng sẽ trả về kết quả tốt nhất.
 
    ``` genetic_algorithm ``` triển khai thuật toán di truyền, thực hiện các bước cơ bản của quá trình tiến hóa để tìm kiếm giải pháp tối ưu.
-   
+
+---
 **Kết quả**:
 
    Quá trình tiến hóa tiếp tục cho đến khi đạt được số thế hệ tối đa, và cá thể có fitness cao nhất được chọn làm giải pháp tối ưu cho bài toán.

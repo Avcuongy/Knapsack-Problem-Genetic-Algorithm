@@ -48,7 +48,7 @@ Các bước chính trong thuật toán di truyền bao gồm:
    
    ``` mutate ``` được thiết kế để thực hiện quá trình này.
    
-6. **Triễn khai thuật toán**:  
+6. **Triển khai thuật toán**:  
    Tối ưu hóa tổng giá trị của các vật phẩm và cập nhật quần thể qua từng thế hệ được chọn trong ba lô mà không vượt quá giới hạn trọng lượng cho phép và cuối cùng sẽ trả về kết quả tốt nhất.
 
    ``` genetic_algorithm ``` triển khai thuật toán di truyền, thực hiện các bước cơ bản của quá trình tiến hóa để tìm kiếm giải pháp tối ưu.

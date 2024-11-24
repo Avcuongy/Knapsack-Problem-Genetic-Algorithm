@@ -21,7 +21,7 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 - Dung lượng tối đa của cái ba lô trong bài toán.
 - Danh sách lưu trữ giá trị fitness của các cá thể tốt nhất qua từng thế hệ.
 
-## Các bước chính trong thuật toán di truyền bao gồm:
+## Các bước chính trong thuật toán di truyền bao gồm
 
 --- 
 

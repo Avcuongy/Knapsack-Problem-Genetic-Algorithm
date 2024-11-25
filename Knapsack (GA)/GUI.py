@@ -53,33 +53,32 @@ def mutate(individual):
 # Thuật toán di truyền
 def genetic_algorithm():
     global fitness_history
-
+    
     population = initialize_population(len(items))
     best_individual = max(population, key=lambda ind: fitness(ind))
 
     for gen in range(GENERATIONS):
         selected_population = select_population(population)
-
+        
+        num_to_crossover = int(POPULATION_SIZE * CROSSOVER_RATE)
+        selected_for_crossover = selected_population[:num_to_crossover]
+        
         offspring = []
-        for i in range(0, len(selected_population), 2):
-            if random.random() < CROSSOVER_RATE and i + 1 < len(selected_population):
-                child1, child2 = crossover(
-                    selected_population[i], selected_population[i + 1]
-                )
+        for i in range(0, num_to_crossover, 2):
+            if i + 1 < len(selected_for_crossover):
+                child1, child2 = crossover(selected_for_crossover[i], selected_for_crossover[i + 1])
                 offspring.extend([child1, child2])
-            else:
-                offspring.extend([selected_population[i], selected_population[i + 1]])
-
+        
         offspring = [mutate(ind) for ind in offspring]
-
+        
         # Cắt tỉa quần thể để đảm bảo kích thước không vượt quá POPULATION_SIZE
         population.extend(offspring)
         population = sorted(population, key=lambda ind: fitness(ind), reverse=True)
         population = population[:POPULATION_SIZE]
-
+        
         current_best = max(population, key=lambda ind: fitness(ind))
         fitness_history.append(fitness(current_best))
-
+        
         if fitness(current_best) > fitness(best_individual):
             best_individual = current_best
 

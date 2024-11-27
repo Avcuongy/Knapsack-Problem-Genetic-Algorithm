@@ -31,16 +31,16 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 2. **Đánh giá quần thể**:
    ``` fitness ``` Fitness của mỗi cá thể được tính dựa trên số vật phẩm được chọn và tính tổng value của số vật phẩm được chọn.
    
-4. **Chọn lọc (Selection)**:  
+3. **Chọn lọc (Selection)**:  
    ``` select_population ``` Các cá thể có fitness tốt được chọn để sinh sản, dựa trên giá trị tổng hợp (sự phù hợp) của chúng đối với bài toán knapsack.
    
-5. **Lai ghép (Crossover)**:  
+4. **Lai ghép (Crossover)**:  
    ``` crossover ``` Các cá thể được lai ghép để tạo ra các cá thể con, mô phỏng sự kết hợp gene từ hai cá thể cha mẹ.
    
-6. **Đột biến (Mutation)**:  
+5. **Đột biến (Mutation)**:  
    ``` mutate ``` Một tỷ lệ nhất định các cá thể trong quần thể sẽ được đột biến, tức là thay đổi một phần tử trong gene của chúng để tăng tính đa dạng trong quần thể.
    
-7. **Triển khai thuật toán**:  
+6. **Triển khai thuật toán**:  
    ``` genetic_algorithm ``` Tối ưu hóa tổng giá trị của các vật phẩm và cập nhật quần thể qua từng thế hệ được chọn trong ba lô mà không vượt quá giới hạn trọng lượng cho phép và cuối cùng sẽ trả về kết quả tốt nhất.
 
 ---

@@ -24,11 +24,10 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 
 --- 
 
-1. **Khởi tạo quần thể**:  
-   Quần thể ban đầu gồm các cá thể được tạo ngẫu nhiên, mỗi cá thể đại diện cho một tập hợp các vật phẩm.
-   
-   ``` initialize_population ``` được thiết kế để thực hiện quá trình này.
-   
+1. **Khởi tạo quần thể**:
+
+   ``` initialize_population ``` Quần thể ban đầu gồm các cá thể được tạo ngẫu nhiên, mỗi cá thể đại diện cho một tập hợp các vật phẩm.
+      
 2. **Đánh giá quần thể**:
    Fitness của mỗi cá thể được tính dựa trên số vật phẩm được chọn và tính tổng value của số vật phẩm được chọn.
    
@@ -39,17 +38,17 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
    
    ``` select_population ``` được thiết kế để thực hiện quá trình này.
    
-4. **Lai ghép (Crossover)**:  
+5. **Lai ghép (Crossover)**:  
    Các cá thể được lai ghép để tạo ra các cá thể con, mô phỏng sự kết hợp gene từ hai cá thể cha mẹ.
    
    ``` crossover ``` được thiết kế để thực hiện quá trình này.
    
-5. **Đột biến (Mutation)**:  
+6. **Đột biến (Mutation)**:  
    Một tỷ lệ nhất định các cá thể trong quần thể sẽ được đột biến, tức là thay đổi một phần tử trong gene của chúng để tăng tính đa dạng trong quần thể.
    
    ``` mutate ``` được thiết kế để thực hiện quá trình này.
    
-6. **Triển khai thuật toán**:  
+7. **Triển khai thuật toán**:  
    Tối ưu hóa tổng giá trị của các vật phẩm và cập nhật quần thể qua từng thế hệ được chọn trong ba lô mà không vượt quá giới hạn trọng lượng cho phép và cuối cùng sẽ trả về kết quả tốt nhất.
 
    ``` genetic_algorithm ``` triển khai thuật toán di truyền, thực hiện các bước cơ bản của quá trình tiến hóa để tìm kiếm giải pháp tối ưu.

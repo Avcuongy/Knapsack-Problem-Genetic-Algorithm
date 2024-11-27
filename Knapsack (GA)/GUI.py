@@ -9,7 +9,7 @@ import random
 POPULATION_SIZE = 200
 GENERATIONS = 200
 CROSSOVER_RATE = 0.8
-MUTATION_RATE = 0.02
+MUTATION_RATE = 0.04
 
 items = []  # Vật phẩm chứa weights và values
 max_capacity = 0  # maximum capacity
@@ -172,12 +172,12 @@ class KnapsackGUI:
         right_frame = ttk.Frame(solution_window, width=450, padding=10)
         right_frame.pack(side="right", fill="both", expand=True)
 
-        solution_text = "Selected items:\n\n"
+        solution_text = "Items Selected:\n\n"
         for i, (selected, (weight, value)) in enumerate(zip(best_solution, items)):
             if selected:
                 solution_text += f"Item {i+1}: Weight={weight}, Value={value}\n"
 
-        solution_text += f"\nSolution vector: {best_solution}\n"
+        solution_text += f"\nSolution: {best_solution}\n"
         solution_text += f"Total Value: {best_fitness}\n"
         solution_text += f"Total Weight: {total_weight}/{max_capacity}"
         

@@ -28,8 +28,8 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 
    ``` initialize_population ``` Quần thể ban đầu gồm các cá thể được tạo ngẫu nhiên, mỗi cá thể đại diện cho một tập hợp các vật phẩm.
       
-2. **Đánh giá quần thể**:
-   ``` fitness ``` Fitness của mỗi cá thể được tính dựa trên số vật phẩm được chọn và tính tổng value của số vật phẩm được chọn.
+2. **Đánh giá quần thể**:<br>
+``` fitness ``` Fitness của mỗi cá thể được tính dựa trên số vật phẩm được chọn và tính tổng value của số vật phẩm được chọn.
    
 3. **Chọn lọc (Selection)**:  
    ``` select_population ``` Các cá thể có fitness tốt được chọn để sinh sản, dựa trên giá trị tổng hợp (sự phù hợp) của chúng đối với bài toán knapsack.

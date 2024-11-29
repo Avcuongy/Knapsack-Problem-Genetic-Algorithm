@@ -1,8 +1,7 @@
- <div align="center">
-  
+<div align="center">
+   
 # KNAPSACK 0/1
 <img src="https://github.com/Avcuongy/Avcuongy/blob/main/Pictures/Knapsack.svg.png" width="350" height="300">
-
 </div>
 
 ---
@@ -42,11 +41,40 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
    
 6. **Triển khai thuật toán**:  
    ``` genetic_algorithm ``` Tối ưu hóa tổng giá trị của các vật phẩm và cập nhật quần thể qua từng thế hệ được chọn trong ba lô mà không vượt quá giới hạn trọng lượng cho phép và cuối cùng sẽ trả về kết quả tốt nhất.
-
----
+   
 **Kết quả**:
 
    Quá trình tiến hóa tiếp tục cho đến khi đạt được số thế hệ tối đa, và cá thể có fitness cao nhất được chọn làm giải pháp tối ưu cho bài toán.
+   
+---
 
 ## Cài đặt
-Clone repository về máy của bạn:
+**Bước 1:** Cài đặt Git
+- Truy cập trang web chính thức của Git: [https://git-scm.com/](https://git-scm.com/).
+- Tải về phiên bản Git phù hợp với hệ điều hành của bạn (Windows, macOS, Linux).
+- Chạy file cài đặt và làm theo hướng dẫn trên màn hình để cài đặt Git.
+
+**Bước 2:** Mở Terminal hoặc Command Prompt
+- **Windows**: Mở `Command Prompt` hoặc `Git Bash`. Bạn có thể tìm thấy Git Bash trong menu Start sau khi cài đặt Git.
+- **macOS/Linux**: Mở ứng dụng `Terminal` từ menu ứng dụng.
+
+**Bước 3:** Clone Repository
+- Trong terminal hoặc command prompt, gõ lệnh sau và nhấn Enter:
+   ```
+   git clone https://github.com/Avcuongy/Knapsack-Problem-Genetic-Algorithm.git
+   ```
+- Lệnh này sẽ tải dự án về máy tính của bạn. Sau khi quá trình clone hoàn tất.
+- Bạn sẽ thấy một thư mục mới có tên là Knapsack-Problem-Genetic-Algorithm chứa mã nguồn của dự án.
+
+**Bước 4:**
+- Mở Visual Studio Code.
+- Trong VS Code, nhấn Ctrl + O (hoặc Cmd + O trên macOS) để mở thư mục.
+- Chọn thư mục Knapsack-Problem-Genetic-Algorithm mà bạn vừa clone về.
+
+**Bước 5:**
+- Trong VS Code, trong File Explorer ở bên trái, tìm thư mục Knapsack (GA).
+- Mở thư mục Knapsack (GA) và tìm tệp `GUI.py`.
+- Nhấp đúp vào `GUI.py` để mở tệp trong VS Code.
+- Mở terminal trong VS Code và gõ lệnh sau để chạy tệp `GUI.py`
+## Lưu ý: 
+Đảm bảo bạn đã cài đặt đầy đủ các phụ thuộc của dự án (nếu có).

@@ -76,5 +76,5 @@ Thuật toán di truyền (GA) được sử dụng để giải quyết bài to
 - Mở thư mục Knapsack (GA) và tìm tệp `GUI.py`.
 - Nhấp đúp vào `GUI.py` để mở tệp trong VS Code.
 - Mở terminal trong VS Code và gõ lệnh sau để chạy tệp `GUI.py`
-## Lưu ý: 
+## Lưu ý
 Đảm bảo bạn đã cài đặt đầy đủ các phụ thuộc của dự án (nếu có).

@@ -1,10 +1,11 @@
 <div align="center">
    
 # KNAPSACK 0/1
-<img src="https://github.com/Avcuongy/Avcuongy/blob/main/Pictures/Knapsack.svg.png" width="350" height="300">
+
 </div>
 
 ---
+
 ## Mô tả bài toán
 
 Bài toán **Knapsack** là một bài toán tối ưu hóa cổ điển trong đó mục tiêu là chọn một tập hợp các vật phẩm từ một danh sách sao cho tổng giá trị của chúng là lớn nhất, đồng thời tổng trọng lượng không vượt quá một giới hạn cho phép (khối lượng của ba lô). Mỗi vật phẩm có một giá trị và trọng lượng nhất định, và chúng ta cần tìm ra một tập hợp các vật phẩm tối ưu.
